@@ -1,0 +1,1304 @@
+/* ============================================================
+   文件: style.css - 许氏家族族谱系统完整样式
+   ============================================================ */
+
+/* ============================================================
+   1. 全局重置 & 基础样式
+   ============================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', '华文楷体', cursive, sans-serif;
+    background: #f5efe9;
+    color: #3e2e1f;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: #fff9f2;
+    border-radius: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+    padding: 30px 30px 50px;
+    border: 1px solid #e4d5c0;
+}
+
+/* ============================================================
+   2. 顶部区域
+   ============================================================ */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #dac9b6;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.header-top h1 {
+    font-size: 2.4rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    color: #7b5d42;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+}
+
+.header-top h1 small {
+    font-size: 0.9rem;
+    display: inline;
+    color: #a48d78;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.user-area span {
+    color: #5f4a34;
+    font-size: 0.95rem;
+}
+
+/* ============================================================
+   3. 顶部导航菜单
+   ============================================================ */
+.top-nav {
+    display: flex;
+    background: #f0e8df;
+    border-radius: 12px;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 4px;
+    border: 1px solid #e6d7c6;
+}
+
+.top-nav a {
+    padding: 8px 18px;
+    text-decoration: none;
+    color: #6f5b47;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.top-nav a:hover {
+    background: #e8ddd2;
+}
+
+.top-nav a.active {
+    background: #b2977d;
+    color: white;
+}
+
+/* ============================================================
+   4. 消息提示
+   ============================================================ */
+.msg {
+    background: #e0d6c8;
+    color: #3f3223;
+    padding: 10px 18px;
+    border-radius: 30px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.msg-error {
+    background: #f0d6c8;
+    color: #7a3a2a;
+}
+
+/* ============================================================
+   5. 页面内容
+   ============================================================ */
+.page-content {
+    min-height: 400px;
+}
+
+.page-header {
+    border-bottom: 2px solid #dacfc2;
+    padding-bottom: 10px;
+    margin-bottom: 16px;
+}
+
+.page-header h2 {
+    font-weight: 300;
+    color: #5f4a34;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+}
+
+/* ============================================================
+   6. 宗族综述
+   ============================================================ */
+.clan-summary {
+    background: #fcf7f2;
+    border: 1px solid #e6d7c6;
+    border-radius: 16px;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+}
+
+.clan-summary h3 {
+    color: #7b5d42;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+    font-size: 1.1rem;
+}
+
+.summary-content {
+    color: #4a3a2a;
+    line-height: 1.8;
+    font-size: 1rem;
+    padding: 4px 0;
+}
+
+.btn-edit-summary {
+    background: #ede5db;
+    border: none;
+    padding: 4px 14px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    color: #5f4a34;
+}
+
+.btn-edit-summary:hover {
+    background: #d0beac;
+}
+
+/* ============================================================
+   7. 标签页（世系图页面）
+   ============================================================ */
+.tab-container {
+    background: #fcf7f2;
+    border-radius: 20px;
+    border: 1px solid #e6d7c6;
+    overflow: hidden;
+}
+
+.tab-bar {
+    display: flex;
+    background: #f0e8df;
+    border-bottom: 2px solid #dacfc2;
+    padding: 0 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    color: #6f5b47;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+    background: #e8ddd2;
+}
+
+.tab-btn.active {
+    background: #fff9f2;
+    border-bottom-color: #b2977d;
+    color: #3e2e1f;
+    font-weight: 600;
+}
+
+.tab-btn .tab-close {
+    margin-left: 6px;
+    font-weight: 300;
+    color: #a48d78;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.tab-btn .tab-close:hover {
+    color: #b17a6b;
+}
+
+.tab-panel {
+    display: none;
+    padding: 16px;
+    background: #fff9f2;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* ============================================================
+   8. 族人名录 - 列表工具栏
+   ============================================================ */
+.list-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+    align-items: center;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 180px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px solid #dacfc2;
+    border-radius: 30px;
+    background: #ffffff;
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   9. 族人名录 - 成员列表（全屏显示）
+   ============================================================ */
+.member-list {
+    padding-right: 4px;
+    width: 100%;
+}
+
+.member-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 10px 16px;
+    margin-bottom: 6px;
+    border-left: 4px solid #cbb8a4;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.15s;
+}
+
+.member-card:hover {
+    background: #fcf8f3;
+    border-left-color: #a88970;
+}
+
+.member-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    align-items: center;
+}
+
+.member-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #cbb8a4;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.member-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #3f2e1d;
+    cursor: pointer;
+}
+
+.member-name:hover {
+    color: #7b5d42;
+    text-decoration: underline;
+}
+
+.member-rank {
+    background: #e8ddd2;
+    padding: 0 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #5f4a34;
+}
+
+.member-detail {
+    color: #6f5b47;
+    font-size: 0.8rem;
+}
+
+.member-actions {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.member-children {
+    padding-left: 30px;
+    border-left: 2px solid #e6d7c6;
+    margin-left: 15px;
+}
+
+/* ============================================================
+   10. 世系图 - 新结构（支持移动端）
+   ============================================================ */
+.tree-root {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.tree-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+}
+
+.node-card {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 8px 14px;
+    border: 2px solid #b2977d;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 70px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.node-card:hover {
+    background: #f5ede4;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.node-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #3f2e1d;
+    white-space: nowrap;
+}
+
+.node-meta {
+    font-size: 0.7rem;
+    color: #8a7a6a;
+}
+
+.branch-trigger {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 2px 4px;
+    border-radius: 50%;
+    background: #ede5db;
+    transition: 0.2s;
+    line-height: 1;
+    border: 2px solid transparent;
+    z-index: 2;
+}
+
+.branch-trigger:hover {
+    background: #b2977d;
+    color: white;
+    transform: scale(1.1);
+}
+
+.children-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 12px;
+    position: relative;
+    width: 100%;
+}
+
+/* SVG 连接线容器 */
+.connector-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ============================================================
+   世系图缩放控件
+   ============================================================ */
+.pedigree-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background: #fcf7f2;
+    border-radius: 12px;
+    border: 1px solid #e6d7c6;
+}
+
+.pedigree-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.pedigree-controls .btn-sm {
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    background: #ede5db;
+    border: 1px solid #dacfc2;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.15s;
+    color: #3f3223;
+}
+
+.pedigree-controls .btn-sm:hover {
+    background: #d0beac;
+}
+
+.zoom-level {
+    font-size: 0.85rem;
+    color: #5f4a34;
+    min-width: 50px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.pedigree-hint {
+    font-size: 0.85rem;
+    color: #8a7a6a;
+    flex: 1;
+    text-align: left;
+}
+
+/* 世系图容器 */
+.tree-wrapper-full {
+    overflow: visible;
+    width: 100%;
+    border: 1px solid #e6d7c6;
+    border-radius: 12px;
+    background: #fcf7f2;
+    padding: 20px;
+    min-height: 400px;
+}
+
+.tree-container {
+    padding: 10px;
+    display: inline-block;
+    min-width: 100%;
+    position: relative;
+}
+
+/* ============================================================
+   11. 按钮
+   ============================================================ */
+.btn {
+    background: #b2977d;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background: #9e8268;
+    transform: translateY(-1px);
+}
+
+.btn-sm {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.btn-edit {
+    background: #d4c5b6;
+    color: #3f3223;
+}
+
+.btn-edit:hover {
+    background: #c0ae9a;
+}
+
+.btn-danger {
+    background: #b17a6b;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #9a6556;
+}
+
+.btn-warning {
+    background: #f39c12;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #e08e0b;
+}
+
+/* ============================================================
+   12. 表单
+   ============================================================ */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #5f4a34;
+    margin-bottom: 2px;
+    font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 7px 12px;
+    border: 1px solid #dacfc2;
+    border-radius: 18px;
+    background: #ffffff;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #b2977d;
+    box-shadow: 0 0 0 3px rgba(178, 151, 125, 0.12);
+}
+
+.form-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 120px;
+}
+
+.avatar-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.avatar-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #b2977d;
+}
+
+/* ============================================================
+   13. 模态框
+   ============================================================ */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff9f2;
+    border-radius: 24px;
+    padding: 24px 28px;
+    max-width: 600px;
+    width: 92%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #a48d78;
+    z-index: 10;
+}
+
+.close-btn:hover {
+    color: #6f5b47;
+}
+
+.modal h3 {
+    font-size: 1.4rem;
+    color: #7b5d42;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #dac9b6;
+    padding-bottom: 8px;
+}
+
+/* 详情行 */
+.detail-row {
+    display: flex;
+    padding: 4px 0;
+    border-bottom: 1px solid #ede5db;
+}
+
+.detail-label {
+    font-weight: 600;
+    width: 80px;
+    color: #5f4a34;
+    flex-shrink: 0;
+}
+
+.detail-value {
+    flex: 1;
+    color: #3e2e1f;
+}
+
+.bio-text {
+    background: #f5efe9;
+    padding: 10px 14px;
+    border-radius: 14px;
+    margin-top: 4px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* 编辑表单（在详情模态框内） */
+.edit-form {
+    margin-top: 14px;
+    border-top: 2px solid #dac9b6;
+    padding-top: 14px;
+}
+
+.edit-form .form-row {
+    gap: 10px;
+}
+
+.edit-form .form-group {
+    margin-bottom: 8px;
+}
+
+/* ============================================================
+   14. 支系图模态框（独立）
+   ============================================================ */
+.branch-modal-content {
+    max-width: 900px;
+    width: 95%;
+}
+
+.branch-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.branch-header h3 {
+    color: #7b5d42;
+    font-size: 1.3rem;
+}
+
+.branch-tree-container {
+    background: #fcf7f2;
+    border-radius: 16px;
+    padding: 16px 10px;
+    border: 1px solid #e6d7c6;
+    overflow-x: auto;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.branch-note {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: #8a7a6a;
+    text-align: center;
+    border-top: 1px solid #ddd0c0;
+    padding-top: 10px;
+}
+
+.loading {
+    text-align: center;
+    padding: 30px;
+    color: #8a7a6a;
+}
+
+/* ============================================================
+   15. 留言板样式
+   ============================================================ */
+.guestbook-form {
+    background: #fcf7f2;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 24px;
+    border: 1px solid #e6d7c6;
+}
+
+.guestbook-form h3 {
+    color: #5f4a34;
+    margin-bottom: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.guestbook-list h3 {
+    color: #5f4a34;
+    margin-bottom: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.guestbook-item {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin-bottom: 14px;
+    border-left: 4px solid #b2977d;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    transition: 0.15s;
+}
+
+.guestbook-item:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.gb-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    margin-bottom: 8px;
+}
+
+.gb-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #3f2e1d;
+}
+
+.gb-time {
+    font-size: 0.8rem;
+    color: #8a7a6a;
+}
+
+.gb-status {
+    font-size: 0.75rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: #f0e8df;
+    color: #6f5b47;
+}
+
+.gb-content {
+    color: #3e2e1f;
+    line-height: 1.7;
+    padding: 4px 0;
+    word-break: break-word;
+}
+
+.gb-reply {
+    margin-top: 10px;
+    padding: 10px 14px;
+    background: #f5efe9;
+    border-radius: 10px;
+    border-left: 3px solid #b2977d;
+    color: #3e2e1f;
+    line-height: 1.6;
+}
+
+.gb-reply-label {
+    font-weight: 600;
+    color: #5f4a34;
+}
+
+.gb-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ede5db;
+}
+
+.gb-reply-form {
+    margin-top: 8px;
+}
+
+.gb-reply-form .form-row {
+    gap: 8px;
+}
+
+/* ============================================================
+   16. 空状态 & 占位
+   ============================================================ */
+.empty-state {
+    background: #f0e8df;
+    border-radius: 30px;
+    padding: 24px;
+    text-align: center;
+    color: #7e6855;
+}
+
+/* ============================================================
+   17. 家族记事 & 相册卡片
+   ============================================================ */
+.event-card,
+.photo-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-left: 4px solid #b2977d;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.event-date {
+    color: #8a7a6a;
+    font-size: 0.85rem;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ============================================================
+   18. 分页
+   ============================================================ */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 0 8px;
+    flex-wrap: wrap;
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border: 1px solid #dacfc2;
+    background: #ffffff;
+    color: #5f4a34;
+    min-width: 36px;
+    text-align: center;
+    transition: 0.15s;
+}
+
+.pagination a:hover {
+    background: #f0e8df;
+    border-color: #b2977d;
+}
+
+.pagination .current {
+    background: #b2977d;
+    color: white;
+    border-color: #b2977d;
+}
+
+/* ============================================================
+   19. 底部
+   ============================================================ */
+.footer-note {
+    margin-top: 24px;
+    text-align: center;
+    color: #a38d78;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-top: 1px solid #e6d7c6;
+    padding-top: 16px;
+}
+
+/* ============================================================
+   20. 移动端适配
+   ============================================================ */
+@media (max-width: 700px) {
+    .container {
+        padding: 14px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+
+    .modal-content {
+        padding: 16px;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .header-top h1 {
+        font-size: 1.8rem;
+    }
+
+    .top-nav {
+        gap: 2px;
+        padding: 4px 8px;
+    }
+
+    .top-nav a {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+
+    .tree-wrapper-full {
+        padding: 10px;
+        min-height: 300px;
+    }
+
+    .tree-root {
+        gap: 10px;
+    }
+
+    .node-card {
+        padding: 6px 10px;
+        min-width: 50px;
+        border-radius: 10px;
+    }
+
+    .node-name {
+        font-size: 0.85rem;
+    }
+
+    .node-meta {
+        font-size: 0.6rem;
+    }
+
+    .children-wrapper {
+        gap: 8px;
+        padding-top: 10px;
+    }
+
+    .tree-node {
+        padding: 0 3px;
+    }
+
+    .branch-trigger {
+        font-size: 0.8rem;
+        padding: 1px 3px;
+    }
+
+    .pedigree-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .pedigree-hint {
+        text-align: center;
+        font-size: 0.75rem;
+    }
+
+    .pedigree-controls .btn-sm {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .guestbook-form {
+        padding: 14px;
+    }
+
+    .guestbook-item {
+        padding: 12px 14px;
+    }
+
+    .gb-header {
+        gap: 4px 8px;
+    }
+
+    .gb-name {
+        font-size: 0.95rem;
+    }
+
+    .gb-actions {
+        gap: 4px;
+    }
+
+    .gb-actions .btn-sm {
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+}
+
+/* ============================================================
+   21. 触摸设备优化
+   ============================================================ */
+@media (hover: none) and (pointer: coarse) {
+    .node-card {
+        padding: 10px 14px;
+    }
+
+    .node-name {
+        font-size: 1rem;
+    }
+
+    .branch-trigger {
+        padding: 4px 8px;
+        font-size: 1rem;
+    }
+
+    .clickable {
+        cursor: default;
+    }
+}
+
+/* ===== 照片查看器（全屏） ===== */
+.photo-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    overflow: hidden;
+}
+
+/* ... 其他样式保持不变 ... */
+
+/* 照片查看器拖拽光标 */
+.photo-viewer-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.15s ease;
+    transform-origin: center center;
+    cursor: default;
+    user-select: none;
+    -webkit-user-drag: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 40px rgba(0,0,0,0.3);
+}
+
+/* ===== 成员详情 - 长方形头像与信息并列 ===== */
+.detail-header {
+    border-bottom: 2px solid #dac9b6;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+}
+
+.detail-header h3 {
+    font-size: 1.5rem;
+    color: #7b5d42;
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+/* 头像与信息并列的行 */
+.detail-info-avatar-row {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    margin-bottom: 4px;
+}
+
+.detail-info-list {
+    flex: 1;
+    min-width: 0;
+}
+
+.detail-avatar-area {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 0;
+    min-width: 160px;
+}
+
+/* ★★★ 长方形头像 - 宽度增加一倍 ★★★ */
+.detail-avatar-rect {
+    width: 180px;
+    height: 240px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #b2977d;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    background: #f5efe9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-avatar-rect img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.detail-body {
+    margin-top: 4px;
+}
+
+/* 如果没有头像，隐藏占位区域 */
+.detail-avatar-area:empty {
+    display: none;
+}
+
+/* 移动端适配 */
+@media (max-width: 600px) {
+    .detail-info-avatar-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .detail-avatar-area {
+        padding: 8px 0 4px 0;
+        min-width: auto;
+    }
+    .detail-avatar-rect {
+        width: 120px;
+        height: 150px;
+    }
+    .detail-header h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* 放大后可拖拽的提示 */
+.photo-viewer-wrapper img.draggable {
+    cursor: grab;
+}
+
+.photo-viewer-wrapper img.dragging {
+    cursor: grabbing;
+}
+
+/* ============================================================
+   ★★★ 确保模态框正确显示 ★★★
+   ============================================================ */
+
+/* 模态框覆盖 - 确保 display:flex 生效 */
+.modal[style*="display: flex"],
+.modal[style*="display:flex"] {
+    display: flex !important;
+}
+
+/* 确保模态框内容在移动端也能正常显示 */
+.modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+/* 加载状态样式 */
+.loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #8a7a6a;
+    font-size: 1.1rem;
+}
+
+.loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+.link {
+    fill: none;
+    stroke: #b2977d;
+    stroke-width: 2.5px;
+    stroke-opacity: 0.8;
+    z-index: 1; /* 新增层级 */
+    pointer-events: none;
+}
+.nodes {
+    z-index: 2; /* 节点高于连线 */
+}
+
+@media print {
+    svg { page-break-inside: avoid; page-break-after: auto; }
+    @page {
+        size: A4 landscape;
+        margin-left: 30mm;
+        margin-right: 20mm;
+    }
+}
+
+@keyframes dots {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+}
